@@ -47,7 +47,7 @@ describe('API', () => {
   })
 
   after(() => {
-    if (aliceServer) aliceServer.close()
+    alicePod.close()
     fs.removeSync(path.join(aliceRootPath, 'index.html'))
     fs.removeSync(path.join(aliceRootPath, 'index.html.acl'))
   })

@@ -81,8 +81,8 @@ describe('Authentication API (OIDC)', () => {
   })
 
   after(() => {
-    if (aliceServer) aliceServer.close()
-    if (bobServer) bobServer.close()
+    alicePod.close()
+    bobPod.close()
     fs.removeSync(path.join(aliceDbPath, 'oidc/users'))
     fs.removeSync(path.join(aliceRootPath, 'index.html'))
     fs.removeSync(path.join(aliceRootPath, 'index.html.acl'))
